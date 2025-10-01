@@ -165,7 +165,14 @@ time.sleep(60)
 # We will query for the summary of the issue using the namespace set in summary strategy above
 memories = client.retrieve_memories(
     memory_id=memory.get("id"),
-    namespace=f"/summaries/User84/OrderSupportSession1",
+## Cleanup
+
+When you're done with the memory resource, you can delete it:
+
+```python
+# Delete the memory resource
+memory_manager.delete_memory(memory_id=memory.get("id"))
+```    namespace=f"/summaries/User84/OrderSupportSession1",
     query="can you summarize the support issue"
 )
 ```
